@@ -16,4 +16,7 @@ public class Demo {
     public int Demo2(){
         return 0;
     }
+    public int Demo3(){
+        return 0;
+    }
 }
