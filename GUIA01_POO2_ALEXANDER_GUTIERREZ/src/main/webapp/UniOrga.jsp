@@ -51,11 +51,11 @@
                     <tbody>
                         <c:forEach items="${beanUniOrgCtrl.consTodo()}" var="fila">
                             <tr>
-                                <td><c:out value="${fila.NombUni}"></c:out></td>
-                                <td><c:out value="${fila.DirUni}"></c:out></td>
-                                <td><c:out value="${fila.TelUni}"></c:out></td>
-                                <td><c:out value="${fila.FaxUni}"></c:out></td>
-                                <td><c:out value="${fila.EmaUni}"></c:out></td>
+                                <td><c:out value="${fila.nombUni}"></c:out></td>
+                                <td><c:out value="${fila.dirUni}"></c:out></td>
+                                <td><c:out value="${fila.telUni}"></c:out></td>
+                                <td><c:out value="${fila.faxUni}"></c:out></td>
+                                <td><c:out value="${fila.emaUni}"></c:out></td>
                                 <td><p><input id="${fila.idUni}" type="radio" name="codiUniRadi" value="${fila.idUni}"/><label for="${fila.idUni}"></label></p></td>
                             </tr>
                         </c:forEach>

@@ -11,18 +11,18 @@ package com.sv.udb.modelo;
  */
 public class UniOrg {
     private int idUni;
-    private String NombUni, DirUni, TelUni, FaxUni, EmaUni;
+    private String nombUni, dirUni, telUni, faxUni, emaUni;
 
     public UniOrg() {
     }
 
-    public UniOrg(int idUni, String NombUni, String DirUni, String TelUni, String FaxUni, String EmaUni) {
+    public UniOrg(int idUni, String nombUni, String dirUni, String telUni, String faxUni, String emaUni) {
         this.idUni = idUni;
-        this.NombUni = NombUni;
-        this.DirUni = DirUni;
-        this.TelUni = TelUni;
-        this.FaxUni = FaxUni;
-        this.EmaUni = EmaUni;
+        this.nombUni = nombUni;
+        this.dirUni = dirUni;
+        this.telUni = telUni;
+        this.faxUni = faxUni;
+        this.emaUni = emaUni;
     }
 
     public int getIdUni() {
@@ -34,43 +34,43 @@ public class UniOrg {
     }
 
     public String getNombUni() {
-        return NombUni;
+        return nombUni;
     }
 
-    public void setNombUni(String NombUni) {
-        this.NombUni = NombUni;
+    public void setNombUni(String nombUni) {
+        this.nombUni = nombUni;
     }
 
     public String getDirUni() {
-        return DirUni;
+        return dirUni;
     }
 
-    public void setDirUni(String DirUni) {
-        this.DirUni = DirUni;
+    public void setDirUni(String dirUni) {
+        this.dirUni = dirUni;
     }
 
     public String getTelUni() {
-        return TelUni;
+        return telUni;
     }
 
-    public void setTelUni(String TelUni) {
-        this.TelUni = TelUni;
+    public void setTelUni(String telUni) {
+        this.telUni = telUni;
     }
 
     public String getFaxUni() {
-        return FaxUni;
+        return faxUni;
     }
 
-    public void setFaxUni(String FaxUni) {
-        this.FaxUni = FaxUni;
+    public void setFaxUni(String faxUni) {
+        this.faxUni = faxUni;
     }
 
     public String getEmaUni() {
-        return EmaUni;
+        return emaUni;
     }
 
-    public void setEmaUni(String EmaUni) {
-        this.EmaUni = EmaUni;
+    public void setEmaUni(String emaUni) {
+        this.emaUni = emaUni;
     }
     
 }

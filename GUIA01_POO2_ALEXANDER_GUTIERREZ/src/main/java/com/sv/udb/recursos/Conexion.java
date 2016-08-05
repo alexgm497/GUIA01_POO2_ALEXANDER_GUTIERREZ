@@ -20,8 +20,8 @@ public class Conexion {
     private String url, user, password;
 
     public Connection getConn() {
-        try {
-            if (this.getDatosConexion()) {
+        try {            
+            if (this.getDatosConexion()) {                
                 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
                 conn = DriverManager.getConnection(this.url, this.user, this.password);
             }
@@ -32,7 +32,7 @@ public class Conexion {
     }
 
     private boolean getDatosConexion() {
-        try {
+        try {            
             Properties prop = new Properties();
             String propFileName = URLDecoder.decode(this.getClass().getClassLoader().getResource("/config.properties").getPath(),"UTF-8");
             File file = new File(propFileName);
