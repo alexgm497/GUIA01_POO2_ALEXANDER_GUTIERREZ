@@ -5,11 +5,8 @@
  */
 package com.sv.udb.vista;
 
-import com.sv.udb.controlador.BodegaCtrl;
-import com.sv.udb.modelo.Bodega;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Laboratorio
+ * @author Alexander José
  */
-@WebServlet(name = "BodegaServ", urlPatterns = {"/BodegaServ"})
-public class BodegaServ extends HttpServlet {
+@WebServlet(name = "UnirOrgServ", urlPatterns = {"/UnirOrgServ"})
+public class UniOrgServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,50 +36,8 @@ public class BodegaServ extends HttpServlet {
             String mens = "";
             String CRUD = request.getParameter("cursBton");
             switch (CRUD) {
-                case "Guardar": {
-                    Bodega obje = new Bodega();
-                    obje.setIdPieza(Integer.parseInt(request.getParameter("cmbPieza")));
-                    obje.setIdProveedor(Integer.parseInt(request.getParameter("cmbProv")));
-                    obje.setBodeCanti(Integer.parseInt(request.getParameter("cantBode")));
-                    Date ahora = new Date();
-                    obje.setFechComp(ahora.getDate() + "-" + (ahora.getMonth() + 1) + "-" + (ahora.getYear() + 1900));
-                    mens = new BodegaCtrl().guar(obje) ? "Datos guardados." : "Datos NO guardados.";
-                    break;
-                }
                 case "Consultar": {
                     int codiBode = Integer.parseInt(request.getParameter("codiBodeRadi") == null ? "0" : request.getParameter("codiBodeRadi"));
-                    Bodega obje = new BodegaCtrl().cons(codiBode);
-                    if (obje != null) {
-                        request.setAttribute("codiBod", obje.getIdBodega());
-                        request.setAttribute("cmbPieza", obje.getIdPieza());
-                        request.setAttribute("cmbProv", obje.getIdProveedor());
-                        request.setAttribute("cantBode", obje.getBodeCanti());
-                    }
-                    break;
-                }
-                case "Modificar": {
-                    String valor = request.getParameter("codiBod");
-                    if (!valor.equals("")) {
-                        Bodega obje = new Bodega();
-                        obje.setIdBodega(Integer.parseInt(request.getParameter("codiBod")));
-                        obje.setIdPieza(Integer.parseInt(request.getParameter("cmbPieza")));
-                        obje.setIdProveedor(Integer.parseInt(request.getParameter("cmbProv")));
-                        obje.setBodeCanti(Integer.parseInt(request.getParameter("cantBode")));
-                        mens = new BodegaCtrl().actu(obje) ? "Datos modificados." : "Datos NO modificados.";
-                    } else {
-                        mens = "Seleccione un dato.";
-                    }
-                    break;
-                }
-                case "Eliminar": {
-                    String valor = request.getParameter("codiBod");
-                    if (!valor.equals("")) {
-                        Bodega obje = new Bodega();
-                        obje.setIdBodega(Integer.parseInt(request.getParameter("codiBod")));
-                        mens = new BodegaCtrl().elim(obje) ? "Datos eliminados." : "Datos NO eliminados.";
-                    } else {
-                        mens = "Seleccione un dato.";
-                    }
                     break;
                 }
                 default:
@@ -95,7 +50,7 @@ public class BodegaServ extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
