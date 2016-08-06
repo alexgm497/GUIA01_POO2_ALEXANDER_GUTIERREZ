@@ -35,7 +35,7 @@
         <br/>
         <br/>
         <div class="container">
-            <form method="POST" action="UniOrgServ">
+            <form method="POST" action="ReportUniOrg.jsp">
                 <jsp:useBean id="beanUniOrgCtrl" class="com.sv.udb.controlador.UniOrgCtrl" scope="page"/>
                 <table border="1" class="striped">
                     <thead>
