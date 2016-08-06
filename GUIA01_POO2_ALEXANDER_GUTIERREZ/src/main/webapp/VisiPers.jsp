@@ -28,6 +28,7 @@
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a href="UniOrga.jsp">Visitas a unidades</a></li>
                     <li><a href="#">Visitas por personas</a></li>
+                    <li><a href="RangOrga.jsp">Visitas por rango</a></li>
                     <li><a href="EsquemaBD.html">Esquema BD</a></li>
                 </ul>
             </div>
@@ -37,34 +38,36 @@
         <br/>
         <br/>
         <div class="container">
-            <form method="POST" action="ReportVisiPers.jsp">
-                <jsp:useBean id="beanPersVisiCtrl" class="com.sv.udb.controlador.PersVisiCtrl" scope="page"/>
-                <table border="1" class="striped">
-                    <thead>
-                        <tr>
-                            <th class="card-panel teal lighten-2">Nombre</th>
-                            <th class="card-panel teal lighten-2">Apellido</th>
-                            <th class="card-panel teal lighten-2">DUI</th>
-                            <th class="card-panel teal lighten-2">Genero</th>
-                            <th class="card-panel teal lighten-2">--</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${beanPersVisiCtrl.consTodo()}" var="fila">
+            <div class="row">
+                <form method="POST" action="ReportVisiPers.jsp" class="col s12">
+                    <jsp:useBean id="beanPersVisiCtrl" class="com.sv.udb.controlador.PersVisiCtrl" scope="page"/>
+                    <table border="1" class="striped">
+                        <thead>
                             <tr>
-                                <td><c:out value="${fila.nombPers}"></c:out></td>
-                                <td><c:out value="${fila.apelPers}"></c:out></td>
-                                <td><c:out value="${fila.duiPers}"></c:out></td>
-                                <td><c:out value="${fila.genePers}"></c:out></td>
-                                <td><p><input id="${fila.idPers}" type="radio" name="codiPersRadi" value="${fila.idPers}"/><label for="${fila.idPers}"></label></p></td>
+                                <th class="card-panel teal lighten-2">Nombre</th>
+                                <th class="card-panel teal lighten-2">Apellido</th>
+                                <th class="card-panel teal lighten-2">DUI</th>
+                                <th class="card-panel teal lighten-2">Genero</th>
+                                <th class="card-panel teal lighten-2">--</th>
                             </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
-                <br/>
-                <center><input class="btn waves-effect waves-light" type="submit" name="cursBton" value="Consultar"/></center>
-                <br/>
-            </form>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${beanPersVisiCtrl.consTodo()}" var="fila">
+                                <tr>
+                                    <td><c:out value="${fila.nombPers}"></c:out></td>
+                                    <td><c:out value="${fila.apelPers}"></c:out></td>
+                                    <td><c:out value="${fila.duiPers}"></c:out></td>
+                                    <td><c:out value="${fila.genePers}"></c:out></td>
+                                    <td><p><input id="${fila.idPers}" type="radio" name="codiPersRadi" value="${fila.idPers}"/><label for="${fila.idPers}"></label></p></td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <center><input class="btn waves-effect waves-light" type="submit" name="cursBton" value="Consultar"/></center>
+                    <br/>
+                </form>
+            </div>
         </div>
     </body>
 </html>

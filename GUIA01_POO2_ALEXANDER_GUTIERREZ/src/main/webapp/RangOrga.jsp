@@ -28,7 +28,6 @@
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a href="#">Visitas a unidades</a></li>
                     <li><a href="VisiPers.jsp">Visitas por personas</a></li>
-                    <li><a href="RangOrga.jsp">Visitas por rango</a></li>
                     <li><a href="EsquemaBD.html">Esquema BD</a></li>
                 </ul>
             </div>
@@ -40,6 +39,14 @@
         <div class="container">
             <div class="row">
                 <form method="POST" action="ReportUniOrg.jsp" class="col s12">
+                    <div class="input-field col s6">
+                        <label for="FechaDesde">Desde</label>
+                        <input type="date" class="datepicker" id="FechaDesde" name="desde">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="FechaHasta">Hasta</label>
+                        <input type="date" class="datepicker" id="FechaHasta" name="hasta">
+                    </div>
                     <jsp:useBean id="beanUniOrgCtrl" class="com.sv.udb.controlador.UniOrgCtrl" scope="page"/>
                     <table border="1" class="striped">
                         <thead>
@@ -70,6 +77,15 @@
                     <br/>
                 </form>
             </div>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript" src="js/materialize.min.js"></script>
+            <script type="text/javascript" src="js/materialize.js"></script>
+            <script>
+                $('.datepicker').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 15 // Creates a dropdown of 15 years to control year
+                });
+            </script>   
         </div>
     </body>
 </html>
