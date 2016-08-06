@@ -26,8 +26,9 @@
             <div class="nav-wrapper">
                 <a href="index.jsp" class="brand-logo right">GUIA 1 - POO2</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="#">Visitas a unidades</a></li>
+                    <li><a href="UniOrga.jsp">Visitas a unidades</a></li>
                     <li><a href="VisiPers.jsp">Visitas por personas</a></li>
+                    <li><a href="#">Visitas por rango</a></li>
                     <li><a href="EsquemaBD.html">Esquema BD</a></li>
                 </ul>
             </div>
@@ -38,7 +39,7 @@
         <br/>
         <div class="container">
             <div class="row">
-                <form method="POST" action="ReportUniOrg.jsp" class="col s12">
+                <form method="POST" action="ReportRangOrga.jsp" class="col s12">
                     <div class="input-field col s6">
                         <label for="FechaDesde">Desde</label>
                         <input type="date" class="datepicker" id="FechaDesde" name="desde">
@@ -67,7 +68,7 @@
                                     <td><c:out value="${fila.telUni}"></c:out></td>
                                     <td><c:out value="${fila.faxUni}"></c:out></td>
                                     <td><c:out value="${fila.emaUni}"></c:out></td>
-                                    <td><p><input id="${fila.idUni}" type="radio" name="codiUniRadi" value="${fila.idUni}"/><label for="${fila.idUni}"></label></p></td>
+                                    <td><p><input id="${fila.idUni}" type="radio" name="codiRangRadi" value="${fila.idUni}"/><label for="${fila.idUni}"></label></p></td>
                                 </tr>
                             </c:forEach>
                         </tbody>

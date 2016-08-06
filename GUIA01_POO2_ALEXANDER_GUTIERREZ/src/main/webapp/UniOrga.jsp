@@ -29,6 +29,7 @@
                     <li><a href="#">Visitas a unidades</a></li>
                     <li><a href="VisiPers.jsp">Visitas por personas</a></li>
                     <li><a href="RangOrga.jsp">Visitas por rango</a></li>
+                    <li><a href="RangOrga.jsp">Visitas por rango</a></li>
                     <li><a href="EsquemaBD.html">Esquema BD</a></li>
                 </ul>
             </div>
