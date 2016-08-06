@@ -17,7 +17,7 @@
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Visitas a unidades</title>
+        <title>Visitas por personas</title>
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -26,8 +26,8 @@
             <div class="nav-wrapper">
                 <a href="index.jsp" class="brand-logo right">GUIA 1 - POO2</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="#">Visitas a unidades</a></li>
-                    <li><a href="VisiPers.jsp">Visitas por personas</a></li>
+                    <li><a href="UniOrga.jsp">Visitas a unidades</a></li>
+                    <li><a href="#">Visitas por personas</a></li>
                     <li><a href="EsquemaBD.html">Esquema BD</a></li>
                 </ul>
             </div>
@@ -37,28 +37,26 @@
         <br/>
         <br/>
         <div class="container">
-            <form method="POST" action="ReportUniOrg.jsp">
-                <jsp:useBean id="beanUniOrgCtrl" class="com.sv.udb.controlador.UniOrgCtrl" scope="page"/>
+            <form method="POST" action="ReportVisiPers.jsp">
+                <jsp:useBean id="beanPersVisiCtrl" class="com.sv.udb.controlador.PersVisiCtrl" scope="page"/>
                 <table border="1" class="striped">
                     <thead>
                         <tr>
                             <th class="card-panel teal lighten-2">Nombre</th>
-                            <th class="card-panel teal lighten-2">Dirección</th>
-                            <th class="card-panel teal lighten-2">Teléfono</th>
-                            <th class="card-panel teal lighten-2">FAX</th>
-                            <th class="card-panel teal lighten-2">Correo</th>
+                            <th class="card-panel teal lighten-2">Apellido</th>
+                            <th class="card-panel teal lighten-2">DUI</th>
+                            <th class="card-panel teal lighten-2">Genero</th>
                             <th class="card-panel teal lighten-2">--</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${beanUniOrgCtrl.consTodo()}" var="fila">
+                        <c:forEach items="${beanPersVisiCtrl.consTodo()}" var="fila">
                             <tr>
-                                <td><c:out value="${fila.nombUni}"></c:out></td>
-                                <td><c:out value="${fila.dirUni}"></c:out></td>
-                                <td><c:out value="${fila.telUni}"></c:out></td>
-                                <td><c:out value="${fila.faxUni}"></c:out></td>
-                                <td><c:out value="${fila.emaUni}"></c:out></td>
-                                <td><p><input id="${fila.idUni}" type="radio" name="codiUniRadi" value="${fila.idUni}"/><label for="${fila.idUni}"></label></p></td>
+                                <td><c:out value="${fila.nombPers}"></c:out></td>
+                                <td><c:out value="${fila.apelPers}"></c:out></td>
+                                <td><c:out value="${fila.duiPers}"></c:out></td>
+                                <td><c:out value="${fila.genePers}"></c:out></td>
+                                <td><p><input id="${fila.idPers}" type="radio" name="codiPersRadi" value="${fila.idPers}"/><label for="${fila.idPers}"></label></p></td>
                             </tr>
                         </c:forEach>
                     </tbody>
